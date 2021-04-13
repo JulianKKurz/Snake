@@ -1,0 +1,407 @@
+#include "global.h"
+
+mW = 0;
+mH = 0;
+wp = 0;
+hp = 0;
+h = 0;
+w = 0;
+hd = 0;
+wd = 0;
+repeat = 0;
+marker = -1;
+
+    char graphic1(int start, int max, int length, char line [], char A, char B)
+{
+    char dummy [length];
+    int compare;
+    int i = start;
+    if (i <= 0)
+    {
+        // initialize
+        for (i; i < length;)
+        {
+            // parts
+            compare = i;
+            for (i; (i < length) && (i < (compare+max)); i++)
+                // part A
+                dummy[i]=A;
+            compare = i;
+            for (i; (i < length) && (i < (compare+max)) ; i++)     //
+                // part B
+                dummy[i]=B;
+        }
+        dummy[i]='\0';
+    }
+    strcpy(line,dummy);
+    return 0;
+}
+
+
+
+void replace(char replace[H][W], char input, char output[H][W], char task)
+{
+    if (marker == -1)
+    {
+        marker = w;
+        repeat = 1;
+    }
+    if  ((w >= W-wd)&&(h >= H-hd-1))
+    {
+        h = 0;
+        w = 0;
+        hd = 0;
+        wd = 0;
+        marker = -1;
+        repeat = 0;
+        return;
+    }
+    else if (((task - 'i')) == 0)   // i = invert  0 TRUE
+    {
+        if (output[h][w] != replace)     // replace replace}
+            output[h][w] = input;
+    }
+    else if ((task - 'r') == 0)     //   r = replace    0 = TRUE
+        if (output[h][w] == replace)     // replace replace}
+            output[h][w] = input;
+    if          (w <= W-wd)
+        w++;
+    if          ((w == W-wd)&&(h != H-hd-1))
+    {
+        w = marker;
+        h++;
+    }
+}
+
+void initialize (char input, char output[H][W])
+{
+    for(int i = 0; i < H*W; i++)
+    output[0][i] = input;
+}
+
+
+void monitoring (unsigned char cmonitor[H][W],char monitor[H][W])
+{
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    CONSOLE_CURSOR_INFO info;
+    info.dwSize = 100;
+    info.bVisible = FALSE;
+    SetConsoleCursorInfo(hConsole, &info);
+    {
+        // print area
+        for (int i = 0; i < H; i++)
+        {
+            for (int j = 0; j < W; j++)
+            {
+                SetConsoleTextAttribute(hConsole, cmonitor[i][j]);
+                printf("%c", monitor[i][j]);
+            }
+            printf("\n");
+        }
+    }
+    {
+        //Initialize the coordinates
+        COORD coord = {0,0};
+        //Set the position
+        SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+    }
+}
+
+
+void cut(char mask[mH][mW], char attribute, char texture[mH][mW], char output[H][W])
+{
+    for (int i = h; i < mH-hd; i++)
+    {
+        for (int j = w; j < mW-wd; j++)
+        {
+            if (mask[i][j]==attribute)
+                output[i+hp][j+wp]=texture[i][j];
+        }
+    }
+    {
+        mW = 0;
+        mH = 0;
+        wp = 0;
+        hp = 0;
+        w = 0;
+        h = 0;
+        wd = 0;
+        hd = 0;
+        return;
+    }
+}
+
+
+window (char*title)
+{
+    // Handle to read from the console.
+    // Set up the handles for reading/writing:
+    HANDLE wHnd = GetStdHandle(STD_OUTPUT_HANDLE);
+    // Change the window title:
+    SetConsoleTitle(title);
+    // Set up the required window size:
+    SMALL_RECT windowSize = {0, 0, 120, 30};
+    SetConsoleWindowInfo(wHnd, 1, &windowSize);
+    // Change the console window size:
+    // Create a COORD to hold the buffer size:
+    COORD bufferSize = {10, 10};
+    SetConsoleScreenBufferSize(wHnd, bufferSize);
+    // Exit
+}
+
+windowsize(int b,int w)
+{
+    if (b&&w!=0)
+    {
+        SMALL_RECT windowSize = {0, 0, w, b};    //change the values
+        SetConsoleWindowInfo(GetStdHandle(STD_OUTPUT_HANDLE), TRUE, &windowSize);
+    }
+    else
+        system("mode 1000");
+}
+
+sign (int art, int k)
+{
+    switch (art)
+    {
+    case 1:
+    {
+        if (k == 1)
+            printf("\xC9");
+        if (k == 2)
+            printf("\xDA");
+    }
+    break;
+    case 2:
+    {
+        if (k == 1)
+            printf("\xCD");
+        if (k == 2)
+            printf("\xC4");
+    }
+    break;
+    case 3:
+    {
+        if (k == 1)
+            printf("\xBB");
+        if (k == 2)
+            printf("\xBF");
+    }
+    break;
+    case 4:
+    {
+        if (k == 1)
+            printf("\xBA");
+        if (k == 2)
+            printf("\xB3");
+    }
+    break;
+    case 5:
+    {
+        if (k == 1)
+            printf("\xCE");
+        if (k == 2)
+            printf("\xC5");
+    }
+    break;
+    case 6:
+    {
+        if (k == 1)
+            printf("\xBA");
+        if (k == 2)
+            printf("\xB3");
+    }
+    break;
+    case 7:
+    {
+        if (k == 1)
+            printf("\xC8");
+        if (k == 2)
+            printf("\xC0");
+    }
+    break;
+    case 8:
+    {
+        if (k == 1)
+            printf("\xCD");
+        if (k == 2)
+            printf("\xC4");
+    }
+    break;
+    case 9:
+    {
+        if (k == 1)
+            printf("\xBC");
+        if (k == 2)
+            printf("\xD9");
+    }
+    break;
+    case 88:
+    {
+        if (k == 1)
+            printf("\xCA");
+        if (k == 2)
+            printf("\xC1");
+    }
+    break;
+    case 44:
+    {
+        if (k == 1)
+            printf("\xCC");
+        if (k == 2)
+            printf("\xC3");
+    }
+    break;
+    case 22:
+    {
+        if (k == 1)
+            printf("\xCB");
+        if (k == 2)
+            printf("\xC2");
+    }
+    break;
+    case 66:
+    {
+        if (k == 1)
+            printf("\xB9");
+        if (k == 2)
+            printf("\xB4");
+    }
+    break;
+    default:
+        break;
+    }
+}
+
+void consoletext (int color, bool cursor)
+{
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    CONSOLE_CURSOR_INFO info;
+    info.dwSize = 100;
+    info.bVisible = cursor;
+    SetConsoleCursorInfo(hConsole, &info);
+    SetConsoleTextAttribute(hConsole, color);
+}
+
+table (int length, int n, int o, int k) // l; Länge    // n; Spalten       //  o; Unten oben       // k; Klasse
+{
+    switch (k)
+    {
+    case 1:
+    {
+        if (o == 1)
+        {
+            printf("\xC9");
+            for(length; length>0; length--)
+                printf("\xCD");
+            for(n ; n>1; n--)
+            {
+                printf("\xCB");
+                for(length; length>0; length--)
+                    printf("\xCD");
+            }
+            printf("\xBB");
+        }
+        else if (o == 0)
+        {
+            printf("\xC8");
+
+            for(length; length>0; length--)
+                printf("\xCD");
+            for(n ; n>1; n--)
+            {
+                printf("\xCA");
+                for(length; length>0; length--)
+                    printf("\xCD");
+            }
+            printf("\xBC");
+        }
+    }
+    break;
+
+    case 2:
+    {
+        if (o == 1)
+        {
+            printf("\xDA");
+            for(length; length>0; length--)
+                printf("\xC4");
+            for(n ; n>1; n--)
+            {
+                printf("\xC2");
+                for(length; length>0; length--)
+                    printf("\xC4");
+            }
+            printf("\xBF");
+        }
+        else if (o == 0)
+        {
+            printf("\xC0");
+            for(length; length>0; length--)
+                printf("\xC4");
+            for(n ; n>1; n--)
+            {
+                printf("\xC1");
+                for(length; length>0; length--)
+                    printf("\xC4");
+            }
+            printf("\xD9");
+        }
+    }
+    break;
+    default:
+        break;
+    }
+}
+line (int l)
+{
+    for(l; l > 0 ; l--)
+        printf("\n");
+}
+space (int s)
+{
+
+    for(s; s > 0 ; s--)
+        printf(" ");
+}
+char text[100];
+
+center(char*text,int line)
+{
+    int lenght;
+
+    if (line>=0)
+     lenght = strlen(text);
+     else
+     lenght = strlen(text)-line;
+
+        coord(60-(lenght/2),line);
+
+    printf("%s",text);
+}
+
+void numberArray (char* text, int* Noten, int elements, char* delimiter)
+{
+    text [0] = '\0';
+    char copy [120];
+    for(int i=0; i<elements; i++)
+    {
+        gcvt(Noten[i],3, copy);
+        strcat(text,copy);
+        strcat(text,delimiter);
+    }
+    return 0;
+}
+
+coord(int x,int y)
+{
+     COORD position= {0,0};
+    HANDLE console;
+    console=GetStdHandle(STD_OUTPUT_HANDLE);
+
+            position.X=x;
+            position.Y=y;
+            SetConsoleCursorPosition(console,position);
+
+                return 0;
+}

@@ -1,0 +1,30 @@
+                                                                                                                        
+                                                                                                                        
+                                                                                                                        
+                                                                                                                        
+                                                                                                                        
+                                                                                                                        
+                                                                                                                        
+                                                                                                                        
+                                                                                                                        
+0                                                                                                                      0
+                                                                                                                        
+                                                                                                                        
+                                                                                UP: UP                                  
+                                                                                                                        
+                                      Break: ESC                                                                        
+                                      ENTER: ENTER               LEFT: LEFT               RIGHT: RIGHT                  
+                                      SPACE: run                                                                        
+                                                                                                                        
+   Made by Julian Konstantin Kurz                                             DOWN: DOWN                                
+                                                                                                                        
+0                                                                                                                      0
+                                                                                                                        
+                                                                                                                        
+                                                                                                                        
+                                                                                                                        
+                                                                                                                        
+                                                                                                                        
+                                                                                                                        
+                                                                                                                        
+                                                                                                                        

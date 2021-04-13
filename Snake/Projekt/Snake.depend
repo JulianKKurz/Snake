@@ -1,0 +1,223 @@
+# depslib dependency file v1.0
+1578496162 source:c:\users\crazy\desktop\snake\analyses.c
+	"global.h"
+	"graphic.h"
+	<sys/time.h>
+
+1617762610 c:\users\crazy\desktop\snake\global.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<windows.h>
+	<conio.h>
+
+1618274339 c:\users\crazy\desktop\snake\graphic.h
+	"global.h"
+
+1617997413 source:c:\users\crazy\desktop\snake\debugging.c
+	"analyses.h"
+	"global.h"
+	"graphic.h"
+
+1578496154 c:\users\crazy\desktop\snake\analyses.h
+
+1618328663 source:c:\users\crazy\desktop\snake\game.c
+	"snake.h"
+	"global.h"
+	"graphic.h"
+	"analyses.h"
+	"parameter.h"
+
+1618326123 c:\users\crazy\desktop\snake\snake.h
+	"global.h"
+
+1618328483 c:\users\crazy\desktop\snake\parameter.h
+
+1618274352 source:c:\users\crazy\desktop\snake\graphic.c
+	"global.h"
+	"graphic.h"
+
+1617847508 source:c:\users\crazy\desktop\snake\initialize.c
+	"snake.h"
+	"global.h"
+	"graphic.h"
+
+1618324470 source:c:\users\crazy\desktop\snake\intro.c
+	"snake.h"
+	"global.h"
+	"graphic.h"
+	"analyses.h"
+	"parameter.h"
+
+1618331580 source:c:\users\crazy\desktop\snake\main.c
+	"snake.h"
+	"global.h"
+	"graphic.h"
+	"analyses.h"
+	"parameter.h"
+	"debugging.h"
+	<windows.h>
+
+1616733115 c:\users\crazy\desktop\snake\debugging.h
+
+1618333808 source:c:\users\crazy\desktop\snake\menu.c
+	"snake.h"
+	"global.h"
+	"graphic.h"
+	"analyses.h"
+	"parameter.h"
+
+1618333498 source:c:\users\crazy\desktop\snake\menubackground.c
+	"global.h"
+	"graphic.h"
+	"analyses.h"
+	"debugging.h"
+	"parameter.h"
+	"snake.h"
+
+1618088277 source:c:\users\crazy\desktop\snake\mouse.c
+	"snake.h"
+	"global.h"
+	"graphic.h"
+	"analyses.h"
+	"parameter.h"
+	<time.h>
+
+1618328728 source:c:\users\crazy\desktop\snake\parameter.c
+	"global.h"
+	"graphic.h"
+	"analyses.h"
+	"parameter.h"
+	<math.h>
+
+1618333498 source:c:\users\crazy\desktop\snake\snake.c
+	"snake.h"
+	"global.h"
+	"graphic.h"
+	"analyses.h"
+	"parameter.h"
+	<time.h>
+
+1617660160 source:c:\users\crazy\desktop\snake\zebra.c
+	"global.h"
+	"graphic.h"
+
+1618335130 source:c:\users\crazy\desktop\snake\bestlist.c
+	"snake.h"
+	"global.h"
+	"graphic.h"
+	"analyses.h"
+	"parameter.h"
+	<time.h>
+
+1578496162 source:c:\users\crazy\desktop\snake\projekt\analyses.c
+	"global.h"
+	"graphic.h"
+	<sys/time.h>
+
+1617762610 c:\users\crazy\desktop\snake\projekt\global.h
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<windows.h>
+	<conio.h>
+
+1618274339 c:\users\crazy\desktop\snake\projekt\graphic.h
+	"global.h"
+
+1618335779 source:c:\users\crazy\desktop\snake\projekt\bestlist.c
+	"snake.h"
+	"global.h"
+	"graphic.h"
+	"analyses.h"
+	"parameter.h"
+	<time.h>
+
+1618346695 c:\users\crazy\desktop\snake\projekt\snake.h
+	"global.h"
+
+1578496154 c:\users\crazy\desktop\snake\projekt\analyses.h
+
+1618328483 c:\users\crazy\desktop\snake\projekt\parameter.h
+
+1617997413 source:c:\users\crazy\desktop\snake\projekt\debugging.c
+	"analyses.h"
+	"global.h"
+	"graphic.h"
+
+1618328663 source:c:\users\crazy\desktop\snake\projekt\game.c
+	"snake.h"
+	"global.h"
+	"graphic.h"
+	"analyses.h"
+	"parameter.h"
+
+1618274352 source:c:\users\crazy\desktop\snake\projekt\graphic.c
+	"global.h"
+	"graphic.h"
+
+1617847508 source:c:\users\crazy\desktop\snake\projekt\initialize.c
+	"snake.h"
+	"global.h"
+	"graphic.h"
+
+1618324470 source:c:\users\crazy\desktop\snake\projekt\intro.c
+	"snake.h"
+	"global.h"
+	"graphic.h"
+	"analyses.h"
+	"parameter.h"
+
+1618331580 source:c:\users\crazy\desktop\snake\projekt\main.c
+	"snake.h"
+	"global.h"
+	"graphic.h"
+	"analyses.h"
+	"parameter.h"
+	"debugging.h"
+	<windows.h>
+
+1616733115 c:\users\crazy\desktop\snake\projekt\debugging.h
+
+1618333808 source:c:\users\crazy\desktop\snake\projekt\menu.c
+	"snake.h"
+	"global.h"
+	"graphic.h"
+	"analyses.h"
+	"parameter.h"
+
+1618333498 source:c:\users\crazy\desktop\snake\projekt\menubackground.c
+	"global.h"
+	"graphic.h"
+	"analyses.h"
+	"debugging.h"
+	"parameter.h"
+	"snake.h"
+
+1618088277 source:c:\users\crazy\desktop\snake\projekt\mouse.c
+	"snake.h"
+	"global.h"
+	"graphic.h"
+	"analyses.h"
+	"parameter.h"
+	<time.h>
+
+1618328728 source:c:\users\crazy\desktop\snake\projekt\parameter.c
+	"global.h"
+	"graphic.h"
+	"analyses.h"
+	"parameter.h"
+	<math.h>
+
+1618346840 source:c:\users\crazy\desktop\snake\projekt\snake.c
+	"snake.h"
+	"global.h"
+	"graphic.h"
+	"analyses.h"
+	"parameter.h"
+	<time.h>
+
+1617660160 source:c:\users\crazy\desktop\snake\projekt\zebra.c
+	"global.h"
+	"graphic.h"
+
